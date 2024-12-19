@@ -3,4 +3,5 @@ export default {
         '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
     },
     testEnvironment: 'node',
+    
 };
