@@ -1,7 +1,8 @@
 export default {
-    transform: {
-        '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
-    },
-    testEnvironment: 'node',
-    
+  transform: {
+    '^.+\\.js$': 'babel-jest',
+  },
+  transformIgnorePatterns: [
+    '/node_modules/(?!@hapi/hapi|nanoid)/', // Transform dependencies seperti Hapi.js
+  ],
 };

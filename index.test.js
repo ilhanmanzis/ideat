@@ -33,7 +33,7 @@ describe('Hapi.js Server', () => {
 
     it('/ should respond with 200 on a valid route', async () => {
         const response = await supertest(server.listener)
-            .get('/') // Ganti dengan route sesuai di `routes.js`
+            .get('/') 
             .expect(200);
 
         expect(response.body).toBeDefined();
