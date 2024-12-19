@@ -29,6 +29,10 @@ steps:
         "--region",
         "asia-southeast2",
         "--allow-unauthenticated",
+        "--min-instances",
+        "1",
+        "--max-instances",
+        "5",
         "--set-env-vars",
         "NODE_ENV=$_NODE_ENV",
       ]
