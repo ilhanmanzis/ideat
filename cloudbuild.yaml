@@ -16,6 +16,22 @@ steps:
   # Step 4: Push Docker image to Container Registry
   - name: "gcr.io/cloud-builders/docker"
     args: ["push", "gcr.io/$PROJECT_ID/ideat-api:$SHORT_SHA"]
+  # Deploy container image to Cloud Run
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: gcloud
+    args:
+      [
+        "run",
+        "deploy",
+        "ideat-api-stg",
+        "--image",
+        "gcr.io/$PROJECT_ID/ideat-api:$SHORT_SHA",
+        "--region",
+        "asia-southeast2",
+        "--allow-unauthenticated",
+        "--set-env-vars",
+        "NODE_ENV=$_NODE_ENV",
+      ]
 
 options:
   logging: CLOUD_LOGGING_ONLY
