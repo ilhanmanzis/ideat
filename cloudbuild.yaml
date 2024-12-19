@@ -1,13 +1,18 @@
 steps:
   # Step 1: Install dependencies
-  - name: "node"
+  - name: "node:18"
     entrypoint: "npm"
     args: ["install"]
 
   # Step 2: Run tests
-  - name: "node"
+  - name: "node:18"
     entrypoint: "npm"
     args: ["test"]
 
-options:
-  logging: CLOUD_LOGGING_ONLY
+  # Step 3: Build Docker image
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["build", "-t", "gcr.io/ideat/ideat-api:$SHORT_SHA", "."]
+
+  # Step 4: Push Docker image to Container Registry
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["push", "gcr.io/ideat/ideat-api:$SHORT_SHA"]
