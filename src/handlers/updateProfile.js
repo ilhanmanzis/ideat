@@ -19,10 +19,10 @@ const updateProfile = async(request, h)=>{
     //user ditemukan
     await queryUser.update({
         nama:nama || dataUser.data().nama,
-        jenisKelamin:jenisKelamin || dataUser.data().jenisKelamin,
-        tanggalLahir:tanggalLahir || dataUser.data().tanggalLahir,
-        tinggiBadan:tinggiBadan || dataUser.data().tinggiBadan,
-        beratBadan:beratBadan || dataUser.data().beratBadan,
+        jenis_kelamin:jenisKelamin || dataUser.data().jenis_kelamin,
+        tanggal_lahir:tanggalLahir || dataUser.data().tanggal_lahir,
+        tinggi_badan:tinggiBadan || dataUser.data().tinggi_badan,
+        berat_badan:beratBadan || dataUser.data().berat_badan,
     });
 
     return h.response({
