@@ -1,9 +1,13 @@
 import getUser from "./handlers/getUser.js";
 import login from "./handlers/login.js";
 import register from "./handlers/register.js";
+import updatepassword from "./handlers/updatePassword.js";
+import updateProfile from "./handlers/updateProfile.js";
 import { loginSchema, validateLogin } from "./middleware/validateLogin.js";
+import { profileSchema, validateProfile } from "./middleware/validateProfile.js";
 import { registerSchema, validateRegister } from "./middleware/validateRegister.js";
 import validateToken from "./middleware/validateToken.js";
+import { passwordSchema, validateUpdatePassword } from "./middleware/validateUpdatePassword.js";
 
 const routes = [
     {
@@ -47,6 +51,28 @@ const routes = [
             pre:[{method: validateToken}]
         },
         handler:getUser
+    },
+    {
+        method:'PUT',
+        path:'/profile',
+        options:{
+            pre:[
+                {method:validateToken},
+                {method:validateProfile(profileSchema)}
+            ]
+        },
+        handler:updateProfile
+    },
+    {
+        method:'PUT',
+        path:'/password',
+        options:{
+            pre:[
+                {method: validateToken},
+                {method: validateUpdatePassword(passwordSchema)}
+            ]
+        },
+        handler:updatepassword
     }
 ];
 

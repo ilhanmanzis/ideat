@@ -11,7 +11,7 @@ const getUser = async(request,h)=>{
     if(!dataUser.exists){
         return h.response({
             status:'fail',
-            message:'user tidak ditemukan',
+            message:'User tidak ditemukan',
             data:null
         }).code(404);
     }
