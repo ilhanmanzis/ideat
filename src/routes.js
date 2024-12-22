@@ -1,5 +1,8 @@
+import getAllHistory from "./handlers/getAllHistory.js";
+import getHistoryById from "./handlers/getHistoryById.js";
 import getUser from "./handlers/getUser.js";
 import login from "./handlers/login.js";
+import logout from "./handlers/logout.js";
 import register from "./handlers/register.js";
 import updatepassword from "./handlers/updatePassword.js";
 import updateProfile from "./handlers/updateProfile.js";
@@ -73,6 +76,30 @@ const routes = [
             ]
         },
         handler:updatepassword
+    },
+    {
+        method:'GET',
+        path:'/historyScan',
+        options:{
+            pre:[{method: validateToken}]
+        },
+        handler:getAllHistory
+    },
+    {
+        method:'GET',
+        path:'/historyScan/{idHistory}',
+        options:{
+            pre:[{method:validateToken}]
+        },
+        handler:getHistoryById
+    },
+    {
+        method:'GET',
+        path:'/logout',
+        options:{
+            pre:[{method:validateToken}]
+        },
+        handler:logout
     }
 ];
 
