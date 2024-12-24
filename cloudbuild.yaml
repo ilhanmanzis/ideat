@@ -37,6 +37,10 @@ steps:
         "NODE_ENV=$_NODE_ENV",
         "--set-env-vars",
         "ACCESS_TOKEN_SECRET=$_ACCESS_TOKEN_SECRET",
+        "--set-env-vars",
+        "MODEL_URL=$_MODEL_URL",
+        "--set-env-vars",
+        "BUCKET_NAME=$_BUCKET_NAME",
       ]
 
 options:

@@ -4,6 +4,7 @@ import getUser from "./handlers/getUser.js";
 import login from "./handlers/login.js";
 import logout from "./handlers/logout.js";
 import register from "./handlers/register.js";
+import scan from "./handlers/scan.js";
 import updatepassword from "./handlers/updatePassword.js";
 import updateProfile from "./handlers/updateProfile.js";
 import { loginSchema, validateLogin } from "./middleware/validateLogin.js";
@@ -100,6 +101,21 @@ const routes = [
             pre:[{method:validateToken}]
         },
         handler:logout
+    },
+    {
+        method:'POST',
+        path:'/scan',
+        options:{
+            pre:[{method:validateToken}],
+            payload: {
+                allow: 'multipart/form-data',
+                multipart: true,
+                output: 'file', // Output sebagai file
+                parse: true, // Parsing otomatis
+                maxBytes: 2 * 1024 * 1024, // Maksimal ukuran file (2MB)
+            },
+        },
+        handler:scan
     }
 ];
 
