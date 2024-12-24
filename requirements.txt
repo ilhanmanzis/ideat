@@ -1,0 +1,9 @@
+fastapi 
+uvicorn 
+pydantic 
+tensorflow 
+pandas 
+numpy 
+fastapi[all] 
+pillow
+python-dotenv
