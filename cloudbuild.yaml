@@ -26,8 +26,6 @@ steps:
         "--max-instances",
         "5",
         "--set-env-vars",
-        "PORT=8080",
-        "--set-env-vars",
         "MODEL_PATH=$_MODEL_PATH",
         "--set-env-vars",
         "CALORIES_DATA_PATH=$_CALORIES_DATA_PATH",
