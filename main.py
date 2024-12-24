@@ -35,7 +35,7 @@ class ImageData(BaseModel):
 
 # Mendapatkan path model dan data kalori dari .env
 model_path = os.getenv("MODEL_PATH")
-calories_data_path = os.getenv("CALORIES_DATA_PATH")
+calories_data_path = "dataset_kalori.csv"
 
 # Memuat model ML dan data kalori
 model = load_model(model_path)
