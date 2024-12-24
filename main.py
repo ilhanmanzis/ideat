@@ -158,8 +158,7 @@ async def capture_image(data: ImageData):
 
 # Menjalankan aplikasi
 if __name__ == "__main__":
-    port = int(os.getenv("PORT", 8080))  # Port default 8080
     try:
-        run(app, host="127.0.0.1", port=port)
+        run(app, host="127.0.0.1", port=8080)
     except Exception as e:
         print(f"Error menjalankan server: {e}")

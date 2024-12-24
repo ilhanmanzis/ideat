@@ -16,8 +16,6 @@ steps:
         "api-model",
         "--image",
         "gcr.io/$PROJECT_ID/fastapi-app",
-        "--platform",
-        "managed",
         "--region",
         "asia-southeast2",
         "--allow-unauthenticated",
