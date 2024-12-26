@@ -35,7 +35,7 @@ This project is the final part of Bangkit Academy. This project involves creatin
 
 1. Download & Install cloud SDK
 
-⚙️ [Download](https://cloud.google.com/sdk/docs/install?hl=id)
+   ⚙️ [Download](https://cloud.google.com/sdk/docs/install?hl=id)
 
 2. clone the repository:
 
