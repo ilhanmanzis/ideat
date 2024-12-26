@@ -18,7 +18,7 @@ const getHistoryById = async(request, h)=>{
             status: 'fail',
             message: {  
                 errors:{
-                    history:[`History dengan ID ${idHistory} tidak ditemukan.`]
+                    history:`History dengan ID ${idHistory} tidak ditemukan.`
                 }
             },
             data: null
