@@ -50,7 +50,7 @@ const routes = [
     },
     {
         method:'GET',
-        path:'/user',
+        path:'/profile',
         options:{
             pre:[{method: validateToken}]
         },
